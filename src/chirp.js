@@ -1,4 +1,5 @@
-;(function($) {
+;var Chirp = Chirp || {};
+(function($) {
     this.fetchTweets = function(user, count, renderCallback) {
         var url = 'http://search.twitter.com/search.json',
             searchParams = {
