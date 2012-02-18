@@ -1,9 +1,6 @@
 (function($) {
     $(function() {
-        var user = 'madzak',
-            count = 3;
-
-        function fetchTweets(user, count, callback) {
+        function fetchTweets(user, count, renderCallback) {
             var url = 'http://search.twitter.com/search.json',
                 searchParams = {
                     'q': 'from:' + user,
@@ -16,7 +13,7 @@
                 data: searchParams,
                 dataType: 'jsonp',
                 success: function(search) {
-                    callback(search.results);
+                    renderCallback(search.results);
                 }
             });
         };
